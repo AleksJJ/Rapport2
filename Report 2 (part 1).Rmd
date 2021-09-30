@@ -10,7 +10,7 @@ library(tidyverse)
 library(readxl)
 library(kableExtra)
 library(knitr)
-lactate_threshold <- read_excel("~/Documents/HINN/IDR4000/R/Rapport_2/Utkast.rapport.2.idr4000/lactate_threshold.xlsx", col_types = c("numeric", "text", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric"))
+lactate_threshold <- read_excel("~/Documents/HINN/IDR4000/R/Rapport_2/Rapport2/lactate_threshold.xlsx", col_types = c("numeric", "text", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric"))
 
 lt <- function(data) {
   # Fit a 3 degree polynomial model
