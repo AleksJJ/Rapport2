@@ -3,26 +3,28 @@ title: "Report 2 - del 2"
 author: "Aleksander Josdal, Vemund Lien, Tonje Fredriksen, Pernille Breili"
 date: "10/5/2021"
 output: html_document
+bibliography: References.bib
 ---
 
-## Predicting sizes of DNA fragments
+### Predicting sizes of DNA fragments
 
-```{r, message=FALSE, warning=FALSE, echo=FALSE}
+```{r, message=FALSE, warning=FALSE}
 
 # Create a data frame of known distances and molecular weights
-ladder <- data.frame(dist = c(29, 43.5, 60.5,
-                              80.5, 106.5,  141.5,  
-                              181.5,    243.5,  281.5,
-                              328.5,    390.5,  465.5,  580.5), 
+ladder <- data.frame(dist = c(238, 348, 376, 
+                              408, 447, 492, 
+                              553, 623, 722, 
+                              780, 850, 932, 1030), 
                      mw = c(1000, 900, 800, 
                             700, 600, 500,
                             400, 300, 250, 
                             200, 150, 100, 50))
-            
 
 # Create a new data frame of unknowns
-unknown <- data.frame(dist = c(470.5,   391.5,  528.5,
-                               421.5,   507.5))
+unknown <- data.frame(dist = c(434, 600, 689,
+                               429, 590, 676,
+                               425, 587, 673,
+                               593, 428, 675))
 
 # Fit the model
 cal <- lm(log(mw) ~ dist, data = ladder)
@@ -31,5 +33,9 @@ cal <- lm(log(mw) ~ dist, data = ladder)
 summary(cal)
 
 preds <- exp(predict(cal, newdata = unknown))
+preds
 ```
+We have estimated molecular weights from migration distances using the data frame of unknowns and the predict function of four participants. Our model gives us in total 12 values, where 3 and 3 values belongs to one participant. According to [@schadock], we use 690bp as a reference to see if you got ACTN3 r577x or not. If you got 690bp you can have different variations of the gene if you got  413bp, and or 318bp aswell. Neither of the participants showed 690bp in the gel. Considering that everyone has the gene, either XX, RR, R/X, we suspect that something has gone wrong  during the conduct of the protocol. 
+
+## References
 
