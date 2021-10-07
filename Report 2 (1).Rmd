@@ -1,11 +1,13 @@
 ---
-title: "Report 2 part 1"
+title: "Report 2 - part 1"
 author: "Aleksander Josdal, Vemund Lien, Tonje Fredriksen, Pernille Breili"
 date: "9/28/2021"
 output: html_document
 ---
 
-```{r}
+## Reliability between lactate threshold at 4 and 2 mmol
+
+```{r, message=FALSE, warning=FALSE, echo=FALSE}
 library(tidyverse)
 library(readxl)
 library(kableExtra)
@@ -34,7 +36,7 @@ lt <- function(data) {
 
 }
 # Save a data set of lactate values from participant 10, time-point pre
-lactate_threshold %>%
+dat <- lactate_threshold %>%
   select(subject, timepoint, lac.75:lac.300) %>%
   pivot_longer(names_to = "watt", 
                values_to = "lactate", 
@@ -60,3 +62,14 @@ lactate_threshold %>%
             m2 = round(mean(c(watt.2mmol_post, watt.2mmol_pre)), 2),
             cv2 = round((te2 / m2) * 100, 2)) 
 ```
+```{r, message=FALSE, warning=FALSE, echo=FALSE, results='asis'}
+dat %>% 
+  select(cv4, cv2) %>%
+  kable(format="html",  
+        col.names = c("CV 4 mmol (%)", "CV 2 mmol (%)"),
+        caption = "Table 1. Typical percentage error at lactate thresholds at 4 and 2 mmol.") %>%
+        add_footnote(label= "CV = Typical percentage error",
+                     notation = "none") %>%
+  kable_styling(latex_options = "striped") 
+```
+The typical percentage error (CV) of the lactate threshold at 4 mmol was 12.17% and 15.39% at 2 mmol. The CV between the two lactate thresholds does not differ in a big extend, with approximately 3% between the values. This means that the precision of the measures at 2 and 4 mmol is accurate. 
