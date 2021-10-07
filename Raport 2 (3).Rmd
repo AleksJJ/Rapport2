@@ -5,9 +5,9 @@ date: "21 9 2021"
 output: html_document
 ---
 
-## Interpreting a regression table
+### Interpreting a regression table
 
-### Does bodyweight affect performance in squat 3RM maximum load?
+#### Does bodyweight affect performance in squat 3RM maximum load?
 
 ```{r echo=FALSE, message=FALSE, warning=FALSE}
 
@@ -28,6 +28,6 @@ tidy(reg) %>%
 kable_styling(latex_options = "striped")
 
 ```
-### Our regression model tells us that when bodyweight increases with 1 kg, 3 RM increases with 1,11 kg. 
+Our regression model tells us that when bodyweight increases with 1 kg, 3 RM increases with 1,11 kg. 
 
-### Standard error is the standard deviation of a sampling distribution of a mean. It tells us how good a model is. A more representative sample of the overall population is given by smaller standard error. The standard error of our regression model is 0.24. The t-statistic is used for hypothesis testing, and measures the size of differences in relation to variations in the data. The higher the t-statistic it is more likely that the null hypothesis is true. Our t-statistic is 4.52. The t-statistic is used together with the p-value. The p-value tells us about the propability for whether our results is caused by coincidence or not. The p-value of our regression model is 0.0001. Because the p-value is lower than 0.05 our model is significant, and we can reject the null hypothesis. The p-value tells us that in 0.0001% the null hypothesis is wrong. It is unlikely that our data is caused by coincidence. 
+Standard error is the standard deviation of a sampling distribution of a mean. It tells us how good a model is. A more representative sample of the overall population is given by smaller standard error. The standard error of our regression model is 0.24. The t-statistic is used for hypothesis testing, and measures the size of differences in relation to variations in the data. The higher the t-statistic it is more likely that the null hypothesis is true. Our t-statistic is 4.52. The t-statistic is used together with the p-value. The p-value tells us about the probability for whether our results is caused by coincidence or not. The p-value of our regression model is 0.0001. Because the p-value is lower than 0.05 our model is significant, and we can reject the null hypothesis. The p-value tells us that in 0.0001% the null hypothesis is wrong. It is unlikely that our data is caused by coincidence. According to these data bodyweight does affect performance in squat 3RM maximum load.

@@ -5,7 +5,7 @@ date: "9/28/2021"
 output: html_document
 ---
 
-## Reliability between lactate threshold at 4 and 2 mmol
+### Reliability between lactate threshold at 4 and 2 mmol
 
 ```{r, message=FALSE, warning=FALSE, echo=FALSE}
 library(tidyverse)
