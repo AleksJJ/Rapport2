@@ -7,7 +7,7 @@ bibliography: References.bib
 ---
 
 ### Predicting sizes of DNA fragments
-
+(Protocol can be found here: https://elab.inn.no/experiments.php?mode=view&id=12)
 ```{r, message=FALSE, warning=FALSE}
 
 # Create a data frame of known distances and molecular weights
